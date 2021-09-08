@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from . import views # . -> pwd, views.py(import)
+from . import views
 # from rest_fromwork.routers import DefaultRouter
 from rest_framework_simplejwt import views as jwt_views
 
@@ -13,10 +13,5 @@ urlpatterns = [
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     
     path("", include('users.urls')),
-    #path("", include('chat.urls')),
-    # path("", include('To_Do.urls')),
-    # path("", views.index),  # "" -> domain
-    # path("home/", views.home),    #path(url, func_name)
-    # path("", include('users.urls')),
 
 ]
